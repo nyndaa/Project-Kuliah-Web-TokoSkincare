@@ -13,7 +13,10 @@ if(isset($_POST['update'])){
     ");
     if(!$update){
         die("Gagal update: " . mysqli_error($conn));
-    }
+    } else {
+    header("Location: kategori.php"); 
+    exit; 
+}
 }
 
 /* =========================
@@ -199,7 +202,7 @@ window.onclick = function(event){
             <label>Nama Kategori</label>
             <input type="text" name="nama_kategori" id="edit_nama" required>
             <div class="modal-action">
-                <button type="submit" class="btn">
+                <button type="submit" name="update" class="btn">
                     Update
                 </button>
                 <button type="button" class="btn-delete" onclick="closeEditModal()">
