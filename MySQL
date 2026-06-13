@@ -1,0 +1,58 @@
+Membuat Database
+CREATE DATABASE BeautySkincare;
+USE BeautySkincare; 
+
+
+Membuat tabel kategori dan menambahkan data didalam database
+-- Buat tabel kategori
+CREATE TABLE kategori (
+id_kategori INT PRIMARY KEY,
+nama_kategori VARCHAR(100) NOT NULL
+);
+
+-- Insert data kategori
+INSERT INTO kategori (id_kategori, nama_kategori) VALUES
+(1, 'Cleanser'),
+(2, 'Toner'),
+(3, 'Serum'),
+(4, 'Moisturizer'),
+(5, 'Sunscreen'); 
+
+
+Membuat tabel produk dan menambahkan data didalam database
+-- Buat tabel produk
+CREATE TABLE produk (
+id_produk INT PRIMARY KEY,
+nama_produk VARCHAR(255) NOT NULL,
+merk VARCHAR(100) NOT NULL,
+harga DECIMAL(12,2) NOT NULL,
+stok INT NOT NULL,
+id_kategori INT NOT NULL,
+gambar VARCHAR(255) NOT NULL,
+FOREIGN KEY (id_kategori) REFERENCES kategori(id_kategori)
+);
+
+-- Insert data produk
+INSERT INTO produk (id_produk, nama_produk, merk, harga, stok, id_kategori, gambar) VALUES
+(1, 'Hydrasoothe Sunscreen Gel SPF45', 'Azarine', 65000.00, 20, 5, 'Azzarine-Sunscreen.jpg'),
+(2, '5X Ceramide Barrier Repair Moisturizer', 'Skintific', 120000.00, 15, 4, 'Skintific-Moisturizer.jpg'),
+(3, 'Niacinamide 10% Serum', 'The Ordinary', 150000.00, 10, 3, 'TheOdinary-Serum.jpg'),
+(4, 'Low pH Good Morning Gel Cleanser', 'COSRX', 130000.00, 12, 1, 'CORSX-Cleanser.jpg'),
+(5, 'Gokujyun Hydrating Toner', 'Hada Labo', 45000.00, 25, 2, 'Hadalabo-Tonner.jpg'); 
+
+
+Membuat tabel admin dan menambahkan data didalam database
+-- Buat tabel admin
+CREATE TABLE admin (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(50)
+);
+
+
+-- Insert data admin
+INSERT INTO admin (username, password)
+VALUES ('admin', 'admin123');
+
+
+
