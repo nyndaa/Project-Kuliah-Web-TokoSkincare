@@ -11,12 +11,12 @@ nama_kategori VARCHAR(100) NOT NULL
 );
 
 -- Insert data kategori
-INSERT INTO kategori (id_kategori, nama_kategori) VALUES
-(1, 'Cleanser'),
-(2, 'Toner'),
-(3, 'Serum'),
-(4, 'Moisturizer'),
-(5, 'Sunscreen'); 
+INSERT INTO kategori (nama_kategori) VALUES
+('Cleanser'),
+('Toner'),
+('Serum'),
+('Moisturizer'),
+('Sunscreen');
 
 
 Membuat tabel produk dan menambahkan data didalam database
