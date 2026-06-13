@@ -87,11 +87,11 @@ $kategori = mysqli_fetch_assoc($resultKategori)['total'];
         <div class="menu">
 
             <a href="produk.php" class="menu-card">
-                📦 Kelola Produk
+                 Kelola Produk
             </a>
 
             <a href="kategori.php" class="menu-card">
-                📁 Kelola Kategori
+                 Kelola Kategori
             </a>
 
         </div>
